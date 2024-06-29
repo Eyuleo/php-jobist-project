@@ -63,16 +63,17 @@
               <p class="my-2 bg-indigo-100 p-2 font-bold">
                 <?= htmlspecialchars($job['contact_email']) ?>
               </p>
+              <?php if(!empty($job['apply_link'])) : ?>
               <h3 class="text-xl">Applying link:</h3>
-              <?php if(isset($job['apply_link'])) : ?>
               <p class="my-2 bg-indigo-100 p-2 font-bold">
                 <a href="<?= htmlspecialchars($job['apply_link'])  ?>" target="_blank">click to apply</a>
               </p>
               <?php endif; ?>
 
+              <?php if(!empty($job['contact_phone'])): ?>
               <h3 class="text-xl">Contact Phone:</h3>
-
-              <p class="my-2 bg-indigo-100 p-2 font-bold"><?= htmlspecialchars($job['contact_phone']) ?? ''?></p>
+              <p class="my-2 bg-indigo-100 p-2 font-bold"><?= htmlspecialchars($job['contact_phone'])?></p>
+              <?php endif; ?>
             </div>
 
             <!-- Manage -->

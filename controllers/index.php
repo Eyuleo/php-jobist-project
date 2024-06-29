@@ -7,6 +7,6 @@ $config = require base_path("config.php");
 
 $db = new Database($config["database"]);
 
-$jobs = $db->query("SELECT * FROM jobs LIMIT 3")->getall();
+$jobs = $db->query("SELECT * FROM jobs ORDER BY id DESC LIMIT 3")->getall();
 
 require base_path("/views/index.view.php");

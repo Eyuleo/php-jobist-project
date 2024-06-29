@@ -11,7 +11,7 @@ $config = require base_path("config.php");
 
 $db = new Database($config["database"]);
 
-$jobs = $db->query('SELECT * FROM jobs WHERE user_id = :user_id', [
+$jobs = $db->query('SELECT * FROM jobs WHERE user_id = :user_id ORDER BY id DESC', [
     'user_id' => $_SESSION['user']['id']
 ])->getall();
 

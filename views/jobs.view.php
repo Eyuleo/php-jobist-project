@@ -1,17 +1,5 @@
 <?php require ('partials/head.php'); ?>
 <?php require ('partials/nav.php') ?>
-  <section class="bg-blue-50 py-4">
-        <div class="container mx-auto px-4">
-          <div class="relative">
-            <input
-              type="text"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-              placeholder="Filter jobs..."
-            />
-          </div>
-        </div>
-  </section>
-
   <section class="bg-blue-50 px-4 py-10">
     <div class="container-xl lg:container m-auto">
         <h2 class="text-3xl font-bold text-indigo-500 mb-6 text-center">
@@ -49,7 +37,28 @@
                     </div>
                 </div>
         <?php endforeach; ?>
-    </div>
+    </div>     
+    
+      
+
+<div class="flex justify-center mt-3">
+  <?php if ($current_page > 1):  ?>
+  <a href="/jobs?page=<?= $current_page - 1 ?>" class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-indigo-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-indigo-700">
+    <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+    </svg>
+    Previous
+  </a>
+  <?php endif; ?>
+  <?php if ($current_page < $total_pages):  ?>
+  <a href="/jobs?page=<?= $current_page + 1 ?>" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-indigo-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-indigo-700">
+    Next
+    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+    </svg>
+  </a>
+  <?php endif; ?>
+</div>
 </section>
     
 <?php require 'partials/footer.php' ?>

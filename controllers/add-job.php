@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $errors['title'] = 'Please provide a title of atleast three characters';
     }
 
-    if (!validateString($description, 5, 255)){
+    if (!validateString($description, 5)){
         $errors['description'] = 'Please provide a description of atleast five characters';
     }
     if (!validateString($salary)){
